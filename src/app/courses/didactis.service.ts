@@ -3,14 +3,17 @@ import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
 import { catchError, tap } from "rxjs/operators";
 import { Area } from "../DTOs/area";
-import { Course } from "./course";
+import { Course } from "../DTOs/course";
+import { CourseEdition } from "../DTOs/course-edtion";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class DidactisService {
-  private courseUrl = 'https://localhost:44331/api/course';
+  private baseUrl = 'https://localhost:44331/api/';
+  private courseUrl = this.baseUrl + 'course';
+  private courseEditionUrl = this.baseUrl + 'courseEdition';
   //private http:HttpClient;
   constructor(private http: HttpClient) {
     this.http = http;
@@ -47,6 +50,12 @@ export class DidactisService {
       'Content-Type': 'application/json'
     });
     return this.http.put<Course>(`${this.courseUrl}/${corso.id}`, corso, { headers })
+      .pipe(tap(data => console.log(JSON.stringify(data))),
+        catchError(this.handleError)
+      );
+  }
+  getCourseEditionsByCourseId(id: number): Observable<CourseEdition[]> {
+    return this.http.get<CourseEdition[]>(`${this.courseUrl}/${id}/editions`)
       .pipe(tap(data => console.log(JSON.stringify(data))),
         catchError(this.handleError)
       );

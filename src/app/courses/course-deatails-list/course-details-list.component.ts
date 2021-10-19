@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Course } from '../course';
+import { CourseEdition } from 'src/app/DTOs/course-edtion';
+import { Course } from '../../DTOs/course';
 import { DidactisService } from '../didactis.service';
 
 @Component({
@@ -11,11 +12,12 @@ import { DidactisService } from '../didactis.service';
   export class CourseDetailsListComponent implements OnInit {
 
     course:Course | undefined;
-
+    courseEditions : CourseEdition[] = [] ;
     constructor(private courseService: DidactisService, private router:Router, private route:ActivatedRoute){
     }
     ngOnInit(): void {
       const id = Number(this.route.snapshot.paramMap.get('id'));
+
       if (id!=null)
       {
         this.courseService.getCourseById(id)
@@ -23,6 +25,11 @@ import { DidactisService } from '../didactis.service';
           next: c => this.course = c,
           error: error => console.log(error)
         });
+        this.courseService.getCourseEditionsByCourseId(id)
+          .subscribe({
+            next: ces => this.courseEditions = ces,
+            error: err => console.log(err)
+          });
       }      
     }
     onBack(): void{

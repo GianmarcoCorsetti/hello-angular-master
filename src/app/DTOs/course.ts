@@ -1,4 +1,4 @@
-import { Level } from "../DTOs/level";
+import { Level } from "./level";
 
 export class Course{
   id: number = 0;

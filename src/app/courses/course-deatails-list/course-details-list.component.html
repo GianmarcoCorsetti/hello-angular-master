@@ -33,6 +33,7 @@
 <div class="image_card">
     <img src="\assets\imagines\online-course.png" alt="STOCAZZO" class="responsive-img" style="width: 200px;">
 </div>
+<button class="btn btn-primary mb-3 ms-3" [routerLink]="['/addedition']">Aggiungi edizione</button>
 <div class="course_card" *ngIf="course">
 
 
@@ -81,4 +82,16 @@
         <span class="input-group-text" id="basic-addon1">Grants certifications</span>
         <span>{{ course.grantsCertification }}</span>
     </div>
+    <table>
+        <th>Id</th>
+        <th>Codice Edizione</th>
+        <th>Descrizione</th>
+        <th>Prezzo Edizione</th>
+        <tr *ngFor="let c of courseEditions">
+            <td>{{ c.id}}</td>
+            <td>{{ c.code }}</td>
+            <td>{{ c.description }}</td>
+            <td>{{ c.realPrice }}</td>
+        </tr>
+    </table>
 </div>

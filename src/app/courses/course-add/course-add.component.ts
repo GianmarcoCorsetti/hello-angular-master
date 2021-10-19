@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Area } from 'src/app/DTOs/area';
 import { Level } from 'src/app/DTOs/level';
-import { Course } from '../course';
+import { Course } from '../../DTOs/course';
 import { DidactisService } from '../didactis.service';
 
 @Component({

@@ -1,0 +1,40 @@
+<form novalidate (ngSubmit)="save()" [formGroup]="editionForm">
+      <!-- Codice -->
+      <label for="code"> Codice Edizione </label>
+      <input type="text" name="code" id="code" formControlName="code"
+            [ngClass]="{ 'is-invalid' : ( editionForm.get('code')?.touched || 
+                                           editionForm.get('code')?.dirty ) && 
+                                          !editionForm.get('code')?.valid  }" >
+      <span class="invalid-feedack">
+            <span *ngIf="editionForm.get('code')?.errors?.required"> Codice Edizione obbligatorio </span>
+      </span>
+      <!-- Data inizio -->
+      <label for="startDate"> Data di Inizio </label>
+      <input type="date" name="startDate" id="startDate" formControlName="startDate"
+            [ngClass]="{ 'is-invalid' : ( editionForm.get('startDate')?.touched || 
+                                           editionForm.get('startDate')?.dirty ) && 
+                                          !editionForm.get('startDate')?.valid  }" >
+      <span class="invalid-feedack">
+            <span *ngIf="editionForm.get('startDate')?.errors?.required"> Data di Inizio obbligatoria </span>
+      </span>
+      <!-- Descrizione -->
+      <label for="description"> Descrizione </label>
+      <input type="text" name="description" id="description" formControlName="description"
+            [ngClass]="{ 'is-invalid' : ( editionForm.get('description')?.touched || 
+                                           editionForm.get('description')?.dirty ) && 
+                                          !editionForm.get('description')?.valid  }" >
+      <span class="invalidFeedack">
+            <span *ngIf="editionForm.get('description')?.errors?.required"> Descrizione obbligatoria </span>
+      </span>
+      <!-- Prezzo -->
+      <label for="realPrice"> Prezzo </label>
+      <input type="number" name="realPrice" id="realPrice" formControlName="realPrice"
+            [ngClass]="{ 'is-invalid' : ( editionForm.get('realPrice')?.touched || 
+                                           editionForm.get('realPrice')?.dirty ) && 
+                                          !editionForm.get('realPrice')?.valid  }" >
+      <span class="invalid-feedack">
+            <span *ngIf="editionForm.get('realPrice')?.errors?.required"> Prezzo obbligatorio </span>
+      </span>
+      <input type="submit" [title]="editionForm.valid ? 'Crea edizione' : 'Disabilitata finchè i dati non sono corretti' "
+            [disabled]="!editionForm.valid" >
+</form>

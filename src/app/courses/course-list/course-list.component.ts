@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Course } from '../course';
+import { Course } from '../../DTOs/course';
 import { DidactisService } from '../didactis.service';
 
 
