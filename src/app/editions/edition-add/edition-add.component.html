@@ -35,6 +35,31 @@
       <span class="invalid-feedack">
             <span *ngIf="editionForm.get('realPrice')?.errors?.required"> Prezzo obbligatorio </span>
       </span>
+      <!-- Id Corso -->
+      <label for="course"> Corso </label>
+      <input type="number" name="course" id="course" formControlName="course"
+            [ngClass]="{ 'is-invalid' : ( editionForm.get('course')?.touched || 
+                                           editionForm.get('course')?.dirty ) && 
+                                          !editionForm.get('course')?.valid  }" >
+      <span class="invalid-feedack">
+            <span *ngIf="editionForm.get('course')?.errors?.required"> Prezzo obbligatorio </span>
+      </span>
+      <!-- Id Istruttore -->
+      <label name="istructor" id="istructor" formControlName="istructor"
+      [ngClass]="{ 'is-invalid' : ( editionForm.get('istructor')?.touched || 
+                                     editionForm.get('istructor')?.dirty ) && 
+                                    !editionForm.get('istructor')?.valid  }" > > Istruttore </label>
+      <select name="" id="">
+            <option value="istructor"></option>
+            <option value="istructor"></option>
+      </select>
+      <input name="istructor" id="istructor" formControlName="istructor"
+            [ngClass]="{ 'is-invalid' : ( editionForm.get('istructor')?.touched || 
+                                           editionForm.get('istructor')?.dirty ) && 
+                                          !editionForm.get('istructor')?.valid  }" > 
+      <span class="invalid-feedack">
+            <span *ngIf="editionForm.get('istructor')?.errors?.required"> Prezzo obbligatorio </span>
+      </span>
       <input type="submit" [title]="editionForm.valid ? 'Crea edizione' : 'Disabilitata finchè i dati non sono corretti' "
             [disabled]="!editionForm.valid" >
 </form>

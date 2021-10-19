@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DidactisService } from 'src/app/courses/didactis.service';
 
 @Component({
   selector: 'app-edition-add',
@@ -7,9 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./edition-add.component.css']
 })
 export class EditionAddComponent implements OnInit {
-
   editionForm: FormGroup;
-  constructor(private fb : FormBuilder) { 
+  constructor(private fb : FormBuilder,private service:DidactisService) { 
     this.editionForm = this.fb.group({
       
     });
@@ -26,5 +26,6 @@ export class EditionAddComponent implements OnInit {
 
   save() : void{
     console.log(this.editionForm.value);
+    this.service.getCourseByEditionId(this.editionForm.value.get('Id'));
   }
 }
