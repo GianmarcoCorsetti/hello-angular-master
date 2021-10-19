@@ -17,9 +17,9 @@ const routes: Routes = [
 
   { path: 'addcourse', component: CourseAddComponent, data: { animationState: 'Add' } },
   
-  {path: 'coursedetails/:id', component: CourseDetailsListComponent, data: { animationState: 'ThreeDetails' }},
+  { path: 'coursedetails/:id', component: CourseDetailsListComponent, data: { animationState: 'ThreeDetails' }},
 
-  {path: 'studentdetails', component: StudentDetailsListComponent, data: { animationState: 'TwoDetails' }},
+  { path: 'studentdetails', component: StudentDetailsListComponent, data: { animationState: 'TwoDetails' }},
 
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 
