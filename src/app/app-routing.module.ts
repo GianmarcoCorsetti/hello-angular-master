@@ -18,7 +18,7 @@ const routes: Routes = [
   
   { path: 'courses', component: CourseListComponent, data: { animationState: 'Three' } },
 
-  { path: 'edition' , component: EditionListComponent , data: { animationState : 'Four'} },
+  { path: 'editions' , component: EditionListComponent , data: { animationState : 'Four'} },
   
   { path: 'editiondetails/:id' , component: EditionDetailsListComponent , data: { animationState : 'FourDetails'} },
 
