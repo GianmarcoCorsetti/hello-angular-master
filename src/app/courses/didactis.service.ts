@@ -11,6 +11,7 @@ import { CourseEdition } from "../DTOs/course-edtion";
   providedIn: 'root'
 })
 export class DidactisService {
+  
   private baseUrl = 'https://localhost:44331/api/';
   private courseUrl = this.baseUrl + 'course';
   private courseEditionUrl = this.baseUrl + 'courseEdition';
@@ -18,6 +19,8 @@ export class DidactisService {
   constructor(private http: HttpClient) {
     this.http = http;
   }
+  //#region "Metodi su Corsi"
+  
   getCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(this.courseUrl)
       .pipe(tap(data => console.log(JSON.stringify(data))),
@@ -60,6 +63,24 @@ export class DidactisService {
         catchError(this.handleError)
       );
   }
+  
+ /*  deleteCourse(id: number) : Observable<Course>{
+    return this.http.delete<Course>()
+  } */
+
+  //#endregion "Metodi su Corsi"
+  
+
+  //#region "Metodi su Edizione Corsi"
+  
+  getCourseByEditionId(id: number): Observable<CourseEdition[]> {
+    return this.http.get<CourseEdition[]>(`${this.courseUrl}/${id}/editions`)
+      .pipe(tap(data => console.log(JSON.stringify(data))),
+        catchError(this.handleError)
+      );
+  }
+
+  //#endregion "Metodi su Edizione Corsi"
   private handleError(errorResponse: HttpErrorResponse): Observable<never> { //lancia un'eccezione
     let errorMessage = '';
     if (errorResponse.error instanceof ErrorEvent) {
