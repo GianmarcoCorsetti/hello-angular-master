@@ -12,7 +12,7 @@ import { StudentListComponent } from './student/student-list/student-list.compon
 
 const routes: Routes = [
 
-  { path: 'home', component: HomeComponent , data: { animationState: 'One' }},
+  { path: 'home', component: HomeComponent , data: { animationState: 'One' } },
 
   { path: 'students', component: StudentListComponent, data: { animationState: 'Two' } },
   
@@ -24,7 +24,7 @@ const routes: Routes = [
 
   { path: 'studentdetails', component: StudentDetailsListComponent, data: { animationState: 'TwoDetails' }},
   
-  { path: 'coursedetails/:id', component: CourseDetailsListComponent, data: { animationState: 'ThreeDetails' }}, 
+  { path: 'coursedetails/:id', component: CourseDetailsListComponent, data: { animationState: 'ThreeDetails' } }, 
   
   { path: 'addcourse/:id', component: CourseAddComponent, data: { animationState: 'Add' } },
 
