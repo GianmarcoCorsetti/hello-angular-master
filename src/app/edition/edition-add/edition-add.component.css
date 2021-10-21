@@ -17,6 +17,12 @@ label{
     margin-left: 5%;
     margin-top: 50px;
 }
+.btn-warning{
+    width: 600px;
+    height: 50px;
+    margin-left: 25%;
+    margin-top: 50px;
+}
 .btn-info:hover{
     -moz-box-shadow: 10px 10px 5px #888;
     -webkit-box-shadow: 10px 10px 5px #888;
@@ -29,10 +35,3 @@ label{
     box-shadow: 15px 25px 20px rgb(27, 27, 27);
     transform: translateY(-3px);
 }
-.btn-warning{
-    width: 600px;
-    height: 50px;
-    margin-left: 25%;
-    margin-top: 50px;
-}
-

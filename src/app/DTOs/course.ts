@@ -7,7 +7,7 @@ export class Course{
   duration: number = 0;
   basePrice: number = 0;
   syllabus: string = "";
-  level: Level = 1;
+  level: Level = Level.INTERMEDIATE;
   areaId: number = 0;
   areaName: string = "";
   grantsCertification: boolean = false;

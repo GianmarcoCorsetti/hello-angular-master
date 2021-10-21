@@ -11,9 +11,9 @@ import { CourseDetailsListComponent } from './courses/course-deatails-list/cours
 import { StudentDetailsListComponent } from './student/student-deatails-list/student-details-list.component';
 import { CourseAddComponent } from './courses/course-add/course-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EditionAddComponent } from './editions/edition-add/edition-add.component';
-import { EditionDetailsListComponent } from './editions/edition-details-list/edition-details-list.component';
-import { EditionListComponent } from './editions/edition-list/edition-list.component';
+import { EditionAddComponent } from './edition/edition-add/edition-add.component';
+import { EntollmentStudentComponent } from './enrollment/entollment-student/entollment-student.component';
+import { StudentAddComponent } from './student/student-add/student-add.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,9 @@ import { EditionListComponent } from './editions/edition-list/edition-list.compo
     StudentDetailsListComponent,
     CourseAddComponent,
     EditionAddComponent,
-    EditionDetailsListComponent,
-    EditionListComponent
+    EntollmentStudentComponent,
+    StudentAddComponent,
+
   ],
   imports: [
     BrowserModule,
